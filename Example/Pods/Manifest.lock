@@ -1,0 +1,16 @@
+PODS:
+  - GGNObservable (0.1.0)
+
+DEPENDENCIES:
+  - GGNObservable (from `../`)
+
+EXTERNAL SOURCES:
+  GGNObservable:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GGNObservable: 6d7d322e8fead53db2e90c70f10474ed09a106f9
+
+PODFILE CHECKSUM: 88e5f96eb3a077ecc5f3daa8eec32fccf6127a28
+
+COCOAPODS: 1.0.1

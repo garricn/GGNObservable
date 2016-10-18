@@ -1,24 +1,48 @@
 //
 //  ViewController.swift
-//  GGNObservable
+//  Observable
 //
-//  Created by Garric Nahapetian on 10/18/2016.
-//  Copyright (c) 2016 Garric Nahapetian. All rights reserved.
+//  Created by Garric Nahapetian on 10/14/16.
+//  Copyright © 2016 Garric Nahapetian. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
+    let viewModel: ViewModeling
+
+    init(viewModel: ViewModeling) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.viewModel = resolvedVM()
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = .whiteColor()
+        setupButton()
+
+        viewModel.alertOutput.onNext { [weak self] alert in
+            self?.presentViewController(alert, animated: true, completion: nil)
+        }
+
+        viewModel.alertOutput.onNext {
+            print($0)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupButton() {
+        let button = UIButton(type: .ContactAdd)
+        button.addTarget(self, action: #selector(addButtonTapped), forControlEvents: .TouchUpInside)
+        button.center = view.center
+        view.addSubview(button)
     }
 
+    func addButtonTapped() {
+        viewModel.addButtonTapped()
+    }
 }
-
