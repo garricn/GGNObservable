@@ -1,0 +1,2 @@
+author: Garric Nahapetian
+xcodebuild_arguments: [-workspace,Example/GGNObservable.xcworkspace,-scheme,GGNObservable]
