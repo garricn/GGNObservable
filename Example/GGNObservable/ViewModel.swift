@@ -22,8 +22,8 @@ class ViewModel: ViewModeling {
     let alertOutput = Observable<UIAlertController>()
 
     func addButtonTapped() {
-        let ok = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-        let alert = UIAlertController(title: "Hello, World!", message: nil, preferredStyle: .Alert)
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let alert = UIAlertController(title: "Hello, World!", message: nil, preferredStyle: .alert)
         alert.addAction(ok)
         alertOutput.emit(alert)
     }

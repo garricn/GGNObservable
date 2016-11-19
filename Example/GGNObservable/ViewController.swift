@@ -23,11 +23,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .whiteColor()
+        view.backgroundColor = .white
         setupButton()
 
         viewModel.alertOutput.onNext { [weak self] alert in
-            self?.presentViewController(alert, animated: true, completion: nil)
+            self?.present(alert, animated: true, completion: nil)
         }
 
         viewModel.alertOutput.onNext {
@@ -36,8 +36,8 @@ class ViewController: UIViewController {
     }
 
     func setupButton() {
-        let button = UIButton(type: .ContactAdd)
-        button.addTarget(self, action: #selector(addButtonTapped), forControlEvents: .TouchUpInside)
+        let button = UIButton(type: .contactAdd)
+        button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         button.center = view.center
         view.addSubview(button)
     }
