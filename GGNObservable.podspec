@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GGNObservable'
-  s.version          = '1.0.0'
+  s.version          = '2.0.0'
   s.summary          = 'Basic Observable type for simple Reactive style programming.'
   s.homepage         = 'https://github.com/garricn/GGNObservable'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
