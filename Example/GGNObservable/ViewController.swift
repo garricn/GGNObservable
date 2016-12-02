@@ -30,8 +30,9 @@ class ViewController: UIViewController {
             self?.presentViewController(alert, animated: true, completion: nil)
         }
 
-        viewModel.alertOutput.onNext {
+        viewModel.alertOutput.onNext { [weak self] in
             print($0)
+            print("Last event = \(self?.viewModel.alertOutput.lastEvent)")
         }
     }
 
