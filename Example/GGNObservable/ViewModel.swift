@@ -26,5 +26,6 @@ class ViewModel: ViewModeling {
         let alert = UIAlertController(title: "Hello, World!", message: nil, preferredStyle: .alert)
         alert.addAction(ok)
         alertOutput.emit(alert)
+        print("Last event = \(alertOutput.lastEvent)")
     }
 }
