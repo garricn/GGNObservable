@@ -20,7 +20,7 @@ open class Observable<T> {
 
     // MARK: - Properties
     /**
-     This typealias exists mainly for convenience, however it's type is important. `Closure` is an `optional` function that takes an instance of the generic type `T` and returns `Void`.
+     This typealias exists mainly for convenience, however it's type is important. `Closure` is a function that takes an instance of the generic type `T` and returns `Void`.
      
      - parameter T: A function that takes a `T`
      
